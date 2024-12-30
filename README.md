@@ -1,10 +1,10 @@
 # LocalAI.NET.Oobabooga
 [![NuGet](https://img.shields.io/nuget/v/LocalAI.NET.Oobabooga.svg)](https://www.nuget.org/packages/LocalAI.NET.Oobabooga)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/LocalAI.NET.KoboldCpp.svg)](https://www.nuget.org/packages/LocalAI.NET.KoboldCpp)
-[![License](https://img.shields.io/github/license/SpongeEngine/LocalAI.NET.KoboldCpp)](LICENSE)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/LocalAI.NET.Oobabooga.svg)](https://www.nuget.org/packages/LocalAI.NET.Oobabooga)
+[![License](https://img.shields.io/github/license/SpongeEngine/LocalAI.NET.Oobabooga)](LICENSE)
 [![.NET](https://img.shields.io/badge/.NET-6.0%20%7C%207.0%20%7C%208.0%2B-512BD4)](https://dotnet.microsoft.com/download)
 
-A .NET client library for Oobabooga, providing a simple and efficient way to interact with KoboldCpp's text generation capabilities in your .NET applications. This library offers support for both KoboldCpp's native API and its OpenAI-compatible endpoints.
+A .NET client library for Oobabooga, providing a simple and efficient way to interact with Oobabooga's text generation capabilities in your .NET applications. This library offers support for both KoboldCpp's native API and its OpenAI-compatible endpoints.
 
 This package serves as the Oobabooga integration layer for the [LocalAI.NET](https://github.com/SpongeEngine/LocalAI.NET) ecosystem.
 
@@ -17,12 +17,12 @@ This package serves as the Oobabooga integration layer for the [LocalAI.NET](htt
 - Cross-platform compatibility
 - Full async/await support
 
-📦 [View Package on NuGet](https://www.nuget.org/packages/LocalAI.NET.KoboldCpp)
+📦 [View Package on NuGet](https://www.nuget.org/packages/LocalAI.NET.Oobabooga)
 
 ## Installation
 Install via NuGet:
 ```bash
-dotnet add package LocalAI.NET.KoboldCpp
+dotnet add package LocalAI.NET.Oobabooga
 ```
 
 ## Quick Start
@@ -192,8 +192,7 @@ dotnet test
 To configure the test environment:
 ```csharp
 // Set environment variables for testing
-Environment.SetEnvironmentVariable("KOBOLDCPP_BASE_URL", "http://localhost:5001");
-Environment.SetEnvironmentVariable("KOBOLDCPP_OPENAI_BASE_URL", "http://localhost:5001/v1");
+Environment.SetEnvironmentVariable("OOBABOOGA_BASE_URL", "http://localhost:5001");
 ```
 
 ## License
