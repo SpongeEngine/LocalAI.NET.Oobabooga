@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/SpongeEngine/OobaboogaSharp)](LICENSE)
 [![.NET](https://img.shields.io/badge/.NET-6.0%20%7C%207.0%20%7C%208.0%2B-512BD4)](https://dotnet.microsoft.com/download)
 
-A C# client library for interacting with Oobabooga's text-generation-webui through its OpenAI-compatible API endpoints. This library provides a simple, efficient way to use local LLMs in your .NET applications.
+C# client for interacting with Oobabooga's text-generation-webui through its OpenAI-compatible API endpoints.
 
 ## Features
 - OpenAI-compatible API support
