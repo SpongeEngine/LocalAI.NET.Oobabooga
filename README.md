@@ -1,4 +1,4 @@
-# SpongeEngine.OobaboogaSharp
+# OobaboogaSharp
 [![NuGet](https://img.shields.io/nuget/v/SpongeEngine.OobaboogaSharp.svg)](https://www.nuget.org/packages/SpongeEngine.OobaboogaSharp)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/SpongeEngine.OobaboogaSharp.svg)](https://www.nuget.org/packages/SpongeEngine.OobaboogaSharp)
 [![License](https://img.shields.io/github/license/SpongeEngine/OobaboogaSharp)](LICENSE)
