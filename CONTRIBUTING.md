@@ -7,16 +7,16 @@
 2. Generate an API key:
    - Go to https://www.nuget.org/account/apikeys
    - Click "Create"
-   - Name: "LocalAI.NET.Oobabooga Publishing" (or your preferred name)
+   - Name: "SpongeEngine.OobaboogaSharp" (or your preferred name)
    - Expiration: 365 days
    - Select "Push new packages and package versions"
-   - Glob Pattern: "LocalAI.NET.Oobabooga*"
+   - Glob Pattern: "SpongeEngine.OobaboogaSharp*"
    - Save the generated key securely
 
 ### Publishing Process
-1. Update version in `LocalAI.NET.Oobabooga/LocalAI.NET.Oobabooga.csproj`:
+1. Update version in `SpongeEngine.OobaboogaSharp/SpongeEngine.OobaboogaSharp.csproj`:
    ```xml
-   <Version>1.0.2</Version>   <!-- Change this to new version -->
+   <Version>1.1.0</Version>   <!-- Change this to new version -->
    ```
 
 2. Clean and pack:
@@ -27,10 +27,10 @@
 
 3. Push to NuGet:
    ```bash
-   dotnet nuget push .\LocalAI.NET.Oobabooga\bin\Release\LocalAI.NET.Oobabooga.1.0.2.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
+   dotnet nuget push .\SpongeEngine.OobaboogaSharp\bin\Release\SpongeEngine.OobaboogaSharp.1.1.0.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
    ```
    Replace:
-   - `1.0.2` with your new version number
+   - `1.1.0` with your new version number
    - `YOUR_API_KEY` with your NuGet API key
 
 4. Wait 15-30 minutes for the package to appear on NuGet.org
