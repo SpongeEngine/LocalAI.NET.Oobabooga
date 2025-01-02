@@ -11,16 +11,16 @@ namespace SpongeEngine.OobaboogaSharp
     public class OobaboogaSharpClient : IDisposable
     {
         private readonly IOobaboogaSharpOpenAiCompatibleProvider _oobaboogaSharpOpenAiCompatibleProvider;
-        private readonly OobaSharpOptions _oobaSharpOptions;
+        private readonly Options _options;
         private bool _disposed;
 
         public string Name { get; set; }
         public string? Version { get; private set; }
         public bool SupportsStreaming => true;
 
-        public OobaboogaSharpClient(OobaSharpOptions oobaSharpOptions, ILogger? logger = null, JsonSerializerSettings? jsonSettings = null)
+        public OobaboogaSharpClient(Options options, ILogger? logger = null, JsonSerializerSettings? jsonSettings = null)
         {
-            _oobaSharpOptions = oobaSharpOptions ?? throw new ArgumentNullException(nameof(oobaSharpOptions));
+            _options = options ?? throw new ArgumentNullException(nameof(options));
 
             JsonSerializerSettings settings = jsonSettings ?? new JsonSerializerSettings
             {
@@ -29,16 +29,16 @@ namespace SpongeEngine.OobaboogaSharp
 
             HttpClient httpClient = new HttpClient
             {
-                BaseAddress = new Uri(oobaSharpOptions.BaseUrl),
-                Timeout = TimeSpan.FromSeconds(oobaSharpOptions.TimeoutSeconds)
+                BaseAddress = new Uri(options.BaseUrl),
+                Timeout = TimeSpan.FromSeconds(options.TimeoutSeconds)
             };
 
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("text/event-stream"));
 
-            if (!string.IsNullOrEmpty(oobaSharpOptions.ApiKey))
+            if (!string.IsNullOrEmpty(options.ApiKey))
             {
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {oobaSharpOptions.ApiKey}");
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {options.ApiKey}");
             }
 
             _oobaboogaSharpOpenAiCompatibleProvider = new OobaboogaSharpOpenAiCompatibleProvider(httpClient, logger: logger, jsonSettings: settings);

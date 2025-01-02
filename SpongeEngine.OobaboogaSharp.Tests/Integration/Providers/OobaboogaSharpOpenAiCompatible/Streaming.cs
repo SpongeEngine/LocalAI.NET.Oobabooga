@@ -22,7 +22,7 @@ namespace SpongeEngine.OobaboogaSharp.Tests.Integration.Providers.OobaboogaSharp
                 .Create(builder => builder.AddXUnit(output))
                 .CreateLogger<Streaming>();
 
-            _clientOobaboogaSharpClient = new OobaboogaSharpClient(new OobaSharpOptions
+            _clientOobaboogaSharpClient = new OobaboogaSharpClient(new Options
             {
                 BaseUrl = TestConfig.BaseApiUrl
             }, _logger);

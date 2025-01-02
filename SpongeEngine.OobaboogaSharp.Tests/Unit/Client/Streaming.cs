@@ -7,6 +7,7 @@ using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
 using Xunit;
 using Xunit.Abstractions;
+using Exception = SpongeEngine.OobaboogaSharp.Models.Common.Exception;
 
 namespace SpongeEngine.OobaboogaSharp.Tests.Unit.Client
 {
@@ -16,7 +17,7 @@ namespace SpongeEngine.OobaboogaSharp.Tests.Unit.Client
 
         public Streaming(ITestOutputHelper output) : base(output)
         {
-            _clientOobaboogaSharpClient = new OobaboogaSharpClient(new OobaSharpOptions
+            _clientOobaboogaSharpClient = new OobaboogaSharpClient(new Options
             {
                 BaseUrl = BaseUrl
             }, Logger);
@@ -123,7 +124,7 @@ namespace SpongeEngine.OobaboogaSharp.Tests.Unit.Client
             };
 
             // Use Should().ThrowAsync<T>() for async operations
-            await act.Should().ThrowAsync<OobaSharpException>();
+            await act.Should().ThrowAsync<Exception>();
         }
     }
 }

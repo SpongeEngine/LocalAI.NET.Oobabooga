@@ -5,20 +5,20 @@ namespace SpongeEngine.OobaboogaSharp.Utils
 {
     public static class HttpClientFactory
     {
-        public static HttpClient Create(OobaSharpOptions oobaSharpOptions)
+        public static HttpClient Create(Options options)
         {
             var client = new HttpClient
             {
-                BaseAddress = new Uri(oobaSharpOptions.BaseUrl),
-                Timeout = TimeSpan.FromSeconds(oobaSharpOptions.TimeoutSeconds)
+                BaseAddress = new Uri(options.BaseUrl),
+                Timeout = TimeSpan.FromSeconds(options.TimeoutSeconds)
             };
 
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("text/event-stream"));
 
-            if (!string.IsNullOrEmpty(oobaSharpOptions.ApiKey))
+            if (!string.IsNullOrEmpty(options.ApiKey))
             {
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {oobaSharpOptions.ApiKey}");
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {options.ApiKey}");
             }
 
             return client;

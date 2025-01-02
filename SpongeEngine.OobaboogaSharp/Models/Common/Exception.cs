@@ -1,12 +1,12 @@
 ﻿namespace SpongeEngine.OobaboogaSharp.Models.Common
 {
-    public class OobaSharpException : Exception
+    public class Exception : System.Exception
     {
         public string Provider { get; }
         public int StatusCode { get; }
         public string ResponseContent { get; }
 
-        public OobaSharpException(string message, string provider, int statusCode, string responseContent) 
+        public Exception(string message, string provider, int statusCode, string responseContent) 
             : base(message)
         {
             Provider = provider;

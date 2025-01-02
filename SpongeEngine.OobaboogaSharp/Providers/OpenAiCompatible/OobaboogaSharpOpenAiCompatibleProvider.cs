@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using SpongeEngine.OobaboogaSharp.Models.Chat;
 using SpongeEngine.OobaboogaSharp.Models.Common;
 using SpongeEngine.OobaboogaSharp.Models.Completion;
+using Exception = SpongeEngine.OobaboogaSharp.Models.Common.Exception;
 using JsonException = Newtonsoft.Json.JsonException;
 
 namespace SpongeEngine.OobaboogaSharp.Providers.OpenAiCompatible
@@ -56,7 +57,7 @@ namespace SpongeEngine.OobaboogaSharp.Providers.OpenAiCompatible
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new OobaSharpException(
+                throw new Exception(
                     "Completion request failed",
                     "Oobabooga",
                     (int)response.StatusCode,
@@ -97,7 +98,7 @@ namespace SpongeEngine.OobaboogaSharp.Providers.OpenAiCompatible
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new OobaSharpException(
+                throw new Exception(
                     "Chat completion request failed", 
                     "Oobabooga",
                     (int)response.StatusCode,
@@ -296,7 +297,7 @@ namespace SpongeEngine.OobaboogaSharp.Providers.OpenAiCompatible
                 if (!response.IsSuccessStatusCode)
                 {
                     var errorContent = await response.Content.ReadAsStringAsync(cancellationToken);
-                    throw new OobaSharpException(
+                    throw new Exception(
                         "Stream chat completion request failed",
                         "Oobabooga",
                         (int)response.StatusCode,
@@ -307,7 +308,7 @@ namespace SpongeEngine.OobaboogaSharp.Providers.OpenAiCompatible
             }
             catch (HttpRequestException ex)
             {
-                throw new OobaSharpException(
+                throw new Exception(
                     "Stream chat completion request failed",
                     "Oobabooga",
                     ex.StatusCode?.GetHashCode() ?? 500,

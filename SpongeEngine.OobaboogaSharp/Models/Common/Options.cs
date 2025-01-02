@@ -1,6 +1,6 @@
 ﻿namespace SpongeEngine.OobaboogaSharp.Models.Common
 {
-    public class OobaSharpOptions
+    public class Options
     {
         public string BaseUrl { get; set; } = "http://localhost:5000";
         public string? ApiKey { get; set; }
